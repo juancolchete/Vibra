@@ -1,6 +1,10 @@
 interface wallet {
   mnemonic: string;
   address: string;
+  nounceDREX: number,
+  nounceLIDO: number,
+  nounceICP: number,
+  nounceLAC: number,
   loaded: boolean;
 }
 

@@ -19,6 +19,10 @@ const PreLoader = () => {
         dispatch(setWallet({
            mnemonic: `${localStorage.getItem("mnemonic")}`, 
            address,
+           nounceDREX: parseInt(`${localStorage.getItem("nounceDREX")}`),
+           nounceLIDO: parseInt(`${localStorage.getItem("nounceLIDO")}`),
+           nounceICP: parseInt(`${localStorage.getItem("nounceICP")}`),
+           nounceLAC: parseInt(`${localStorage.getItem("nounceICP")}`),
            loaded: true 
         })) 
       }else{
@@ -27,10 +31,18 @@ const PreLoader = () => {
         dispatch(setWallet({
            mnemonic: mnemonic.phrase, 
            address: signer.address,
+           nounceDREX:1,
+           nounceLIDO:1,
+           nounceICP:1,
+           nounceLAC:1,
            loaded: true 
         }))
         localStorage.setItem("mnemonic",mnemonic.phrase)
         localStorage.setItem("address",signer.address)
+        localStorage.setItem("nounceDREX","1")
+        localStorage.setItem("nounceLIDO","1")
+        localStorage.setItem("nounceICP","1")
+        localStorage.setItem("nounceLAC","1")
       }
       }
     }, [dispatch,wallet]);
