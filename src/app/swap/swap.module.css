@@ -1,0 +1,47 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 45px 15px;
+}
+
+.cards {
+  width: 100%;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 21px;
+  margin-top: 35px;
+}
+
+.cards input {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid var(--Gray80, #2E304B);
+  background: var(--Gray100, #1D1F30);
+  width: 100%;
+  padding: 8px 12px;
+  position: relative;
+  color: #fff;
+}
+
+.cards select {
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid var(--Gray80, #2E304B);
+  background: var(--Gray100, #1D1F30);
+}
+
+.cards select option {
+  color: #ccc;
+}
+
+.cards svg {
+  margin: 0 auto;
+  width: 34px;
+  height: 34px;
+}

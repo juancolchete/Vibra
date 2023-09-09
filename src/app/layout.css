@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(152deg, rgba(36, 40, 80, 1) -100%, rgba(29, 31, 48, 1) 100%) !important;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* FONTS */
+.title {
+  color: #FCFCFC;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  margin-bottom: 0;
+}
+
+.text {
+  color: rgba(252, 252, 252, 0.40);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 117%;
+  margin-bottom: 0;
+}
+
+/* BUTTONS */
+button.btnBlue {
+  border-radius: 4px;
+  background: linear-gradient(224deg, #547AFF 0%, #413DFF 100%);
+  color: #FCFCFC;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  transition: all 0.3s ease;
+  padding: 1rem 2rem;
+  border: none;
+  width: 100%;
+}
+
+button.btnBlue:hover {
+  background: linear-gradient(104deg, #547AFF 0%, #413DFF 100%);
+}
+
+button.btnBlue:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+button.btnDark {
+  border-radius: 4px;
+  background: #1D1F30;
+  color: #FCFCFC;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  transition: all 0.3s ease;
+  padding: 1rem 2rem;
+  border: none;
+  width: 100%;
+}
+
+button.btnDark:hover {
+  background: #3E415A;
+}
+
+/* INPUT */
+.inputCopy {
+  border-radius: 4px;
+  border: 1px solid #2E304B;
+  background: #1D1F30;
+  width: 100%;
+  padding: .5rem 1rem;
+  color: #fff;
+}
+
+/* SPAN POSITION */
+.spanPosition {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.spanPosition button {
+  position: absolute;
+  right: .1rem;
+  top: -5%;
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+}
+
+/* SECTION */
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+section button {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section button svg path {
+  fill: #fff;
+  stroke: none;
+}
+
+section button:hover {
+  background-color: #547AFF;
+}
+
+section button:hover svg path {
+  fill: #3E415A;
+}
+
+.sidebar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #4A5AFF;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 0 auto;
+}
+
+.sidebar a {
+  background-color: #2E304B;
+  padding: 15px 15px;
+  width: 60px;
+  height: 60px;
+  transform: translateY(-20px);
+  border: none;
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2);
+  border-radius: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar a button {
+  background: none;
+  border: none;
+}
+
+.sidebar a:nth-child(2) {
+  transform: translateY(-30px);
+  background-color: #4A5AFF;
+}
+
+
+.sidebar a.active button svg path {
+  fill: #4A5AFF !important;
+  background-color: #4A5AFF;
+}
+
+/* LOADING */
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+svg {
+  font-family: "Russo One", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+svg text {
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #365FA0;
+  font-size: 100px;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(72, 138, 204, 0);
+    stroke: rgba(54, 95, 160, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+
+  70% {
+    fill: rgba(72, 138, 204, 0);
+    stroke: rgba(54, 95, 160, 1);
+  }
+
+  80% {
+    fill: rgba(72, 138, 204, 0);
+    stroke: rgba(54, 95, 160, 1);
+    stroke-width: 3;
+  }
+
+  100% {
+    fill: rgba(72, 138, 204, 1);
+    stroke: rgba(54, 95, 160, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+
+.wrapper {
+  height: 100vh
+}
+
+.newLoading {
+  position: relative;
+  height: 400px;
+  max-width: 400px;
+  margin: 10% auto;
+}
+
+.a1 {
+  position: absolute;
+  top: 150px;
+  right: 130px;
+  opacity: 0;
+  animation: fadeIn 4s infinite;
+  animation-delay: 0s;
+  transition: all 0.3s ease;
+}
+
+
+.a2 {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  opacity: 0;
+  animation: fadeIn 4s infinite;
+  animation-delay: 1s;
+  transition: all 0.3s ease;
+}
+
+.a3 {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  opacity: 0;
+  animation: fadeIn 4s infinite;
+  animation-delay: 2s;
+  transition: all 0.3s ease;
+}
+
+.a4 {
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  width: 420px;
+  opacity: 0;
+  animation: fadeIn 4s infinite;
+  animation-delay: 3s;
+  transition: all 0.3s ease;
+}
+
+.a5 {
+  position: absolute;
+  top: -50px;
+  right: -35px;
+  width: 470px;
+  opacity: 0;
+  animation: fadeIn 4s infinite;
+  animation-delay: 3.5s;
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .newLoading {
+    margin: 40% auto;
+  }
+}

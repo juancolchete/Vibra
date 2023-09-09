@@ -1,0 +1,103 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import React, { useState } from "react";
+import styles from "./account.module.css";
+import Text from "@/components/fonts/Text";
+import Button from "@/components/buttons/Button";
+import Sidebar from "@/components/sidebar/Sidebar";
+import Header from "@/components/header/Header";
+import Link from "next/link";
+import { IoArrowUndoOutline } from "react-icons/io5";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
+
+const cadeado = "./cadeado.png";
+
+const Account = () => {
+  const [copied, setCopied] = useState(false);
+  const [value, setValue] = useState("0x4a4s4dasfasfjhaosjhdoasjdas");
+  const [eyeOpen, setEyeOpen] = useState(false);
+  const handleCopyClick = () => {
+    toast("Copy !");
+    const textToCopy = `${value}`;
+    navigator.clipboard.writeText(textToCopy);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const togglePassword = () => {
+    setEyeOpen(!eyeOpen);
+  };
+  return (
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      <div className="container-fluid ">
+        <div className="row ">
+          <div className="col-md-6 col-lg-6 offset-md-3   ">
+            <div className={styles.content}>
+              <Header />
+              {/* SECTION */}
+              <section>
+                <Link href="/dashboard">
+                  <button>
+                    <IoArrowUndoOutline />
+                  </button>
+                </Link>
+                <Text size="1.125rem" color="#fff">
+                  Account
+                </Text>
+              </section>
+              {/* CARD */}
+              <div className={styles.cards}>
+                <img src={cadeado} alt="" />
+                <Text size="1.125rem" color="#fff">
+                  Your seed phrase
+                </Text>
+
+                <Text size="0.875rem" color="#fcfcfc66" center>
+                  Your seed phrase is the only protection for your coins, don't
+                  lose it and never pass it on to anyone.
+                </Text>
+
+                <span className="spanPosition">
+                  <input
+                    type={eyeOpen ? "text" : "password"}
+                    className="inputCopy"
+                    value={value}
+                  />
+                  <button onClick={togglePassword}>
+                    {eyeOpen ? (
+                      <AiOutlineEye className={styles.eye} size={20} />
+                    ) : (
+                      <AiOutlineEyeInvisible className={styles.eye} size={20} />
+                    )}
+                  </button>
+                </span>
+
+                <Button onClick={handleCopyClick} className="btnBlue">
+                  Copy seed phrase
+                </Button>
+              </div>
+
+              <Sidebar />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Account;

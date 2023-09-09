@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+}
+
+.header img {
+  width: 66px;
+  height: 26.964px;
+}
+
+.header div {
+  background: linear-gradient(224deg, #547AFF 0%, #413DFF 100%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
