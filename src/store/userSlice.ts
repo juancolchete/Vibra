@@ -10,10 +10,10 @@ const initialState: user = {
   wallet:{
     mnemonic: "",
     address: "",
-    nounceDREX:1,
-    nounceLIDO:1,
-    nounceICP:1,
-    nounceLAC:1,
+    nonceDREX:1,
+    nonceLIDO:1,
+    nonceICP:1,
+    nonceLAC:1,
     loaded: false,
   },
    balance:{
