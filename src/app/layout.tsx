@@ -1,4 +1,7 @@
 "use client"
+import "@/app/layout.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Inter } from 'next/font/google'
 import { store } from "@/store/store";
 import { Provider } from "react-redux";
