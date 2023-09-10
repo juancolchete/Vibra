@@ -26,8 +26,8 @@ const BcLoader = () => {
         console.log(stEthRawBal)
         dispatch(setBalance({
           drex:0,
-          icp:0,
-          laChain:0,
+          BFT:0,
+          LAC:0,
           stEth: stEthBal,
         })) 
       }
@@ -38,7 +38,7 @@ const BcLoader = () => {
       dispatch(setWalletNonce({
         nonceDREX:0,
         nonceLIDO:txnCount,
-        nonceICP:0,
+        nonceBFT:0,
         nonceLAC:0
       }))
       localStorage.setItem("nonceLIDO",(txnCount).toString())
