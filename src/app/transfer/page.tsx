@@ -91,7 +91,6 @@ const DrexTransfer = () => {
                   Receiver
                 </Text>
                 <input
-                  type="number"
                   placeholder="0x6791504a6d9219ca528b333A71b427B4044Fb18a"
                   onChange={(e) => setReceiverAddress(e.target.value)}
                 />
