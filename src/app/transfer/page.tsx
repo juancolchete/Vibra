@@ -118,7 +118,7 @@ const DrexTransfer = () => {
                   Send amount
                 </Text>
                 <input type="number" placeholder="0.01" onChange={(e) => setAmountSend(e.target.value)} />
-                <Link href="wstethtransfer">
+                <Link href={"transfer?crypto=stETH&amount="+amountSend}>
                   <Button className="btnBlue" onClick={()=>transfer()}>Transfer crypto</Button>
                 </Link>
               </div>

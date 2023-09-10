@@ -13,11 +13,15 @@ import Link from "next/link";
 import { IoArrowUndoOutline } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
 import { Spinner } from "react-bootstrap";
+import { useSearchParams } from "next/navigation";
 
 const Wstethtransfer = () => {
   const [value, setValue] = useState("0x6791504a6d9219ca528b333A71b427B4044Fb18a");
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
+  const searchParams = useSearchParams();
+  const crypto = searchParams.get("crypto");
+  const amount = searchParams.get("amount");
   function loadingBtn() {
     setLoading(true);
     setTimeout(() => {
@@ -78,7 +82,7 @@ const Wstethtransfer = () => {
                 <Text size="0.675rem" color="##fcfcfc66" center>
                   You are sending
                 </Text>
-                <Title size="0.875rem">3,45 DREX</Title>
+                <Title size="0.875rem">{amount} {crypto}</Title>
 
                 <Text size="0.675rem" color="##fcfcfc66" center>
                   to this wallet
