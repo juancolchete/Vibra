@@ -12,5 +12,10 @@ interface balance{
   drex: number;
   icp: number;
   wDrex: number;
-  wstEth: number;
+  stEth: number;
+}
+
+interface walletProperty{
+  prop: "mnemonic"|"address"|"nonceDREX"|"nonceLIDO"|"nonceICP"|"nonceLAC",
+  value: string | number | never;
 }

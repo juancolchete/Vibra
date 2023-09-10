@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import { store } from "@/store/store";
 import { Provider } from "react-redux";
 import PreLoader from '@/components/loaders/preLoader';
+import BcLoader from "@/components/loaders/bcLoader";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
         <body className={inter.className}>{children}</body>
       </html>
       <PreLoader />
+      <BcLoader />
     </Provider>
   )
 }

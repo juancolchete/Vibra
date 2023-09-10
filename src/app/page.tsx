@@ -19,7 +19,7 @@ const cadeado = "./cadeado.png";
 
 export default function Home() {
   const wallet = useSelector((state: RootState) => state.user.wallet);
-  const [value, setValue] = useState("0x4a4s4dasfasfjhaosjhdoasjdas");
+  const [value, setValue] = useState("0x6791504a6d9219ca528b333A71b427B4044Fb18a");
   const [isLoading, setIsLoading] = useState(true);
   const [copied, setCopied] = useState(false);
   const [eyeOpen, setEyeOpen] = useState(false);

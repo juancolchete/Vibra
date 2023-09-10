@@ -19,6 +19,7 @@ const page = () => {
               {/* TITLE */}
               <Title size="1.5rem">Dashboard</Title>
               {/* CARD1 */}
+              <Link href="drex">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
                   DREX
@@ -31,18 +32,18 @@ const page = () => {
                     <Text size="1.125rem" color="#fff">
                       25.547,51
                     </Text>
-                    <Link href="drex">
                       <button>
                         <BsFillArrowRightCircleFill />
                       </button>
-                    </Link>
                   </div>
                 </div>
               </div>
+              </Link>
               {/* CARD2 */}
+              <Link href="steth">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
-                  (w)stETH
+                  stETH
                 </Text>
                 <div className={styles.cardsInt}>
                   <Text size="0.625rem" color="##fcfcfc66">
@@ -52,15 +53,15 @@ const page = () => {
                     <Text size="1.125rem" color="#fff">
                       25.547,51
                     </Text>
-                    <Link href="wsteth">
                       <button>
                         <BsFillArrowRightCircleFill />
                       </button>
-                    </Link>
                   </div>
                 </div>
               </div>
+              </Link>
               {/* CARD3 */}
+              <Link href="lido">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
                   LIDO
@@ -73,15 +74,15 @@ const page = () => {
                     <Text size="1.125rem" color="#fff">
                       547,51
                     </Text>
-                    <Link href="lido">
                       <button>
                         <BsFillArrowRightCircleFill />
                       </button>
-                    </Link>
                   </div>
                 </div>
               </div>
+              </Link>
               {/* CARD4 */}
+              <Link href="icp">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
                   ICP
@@ -94,14 +95,13 @@ const page = () => {
                     <Text size="1.125rem" color="#fff">
                       47,51
                     </Text>
-                    <Link href="icp">
                       <button>
                         <BsFillArrowRightCircleFill />
                       </button>
-                    </Link>
                   </div>
                 </div>
               </div>
+              </Link>
 
               <Sidebar />
             </div>

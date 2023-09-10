@@ -47,7 +47,7 @@ export default function Home() {
      <>
       {wallet.address}
       {wallet && wallet.loaded == true ?
-      <button onClick={() => getRawErc20('0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F',"1","0xdC0cD343ebe20cA2ed01986518c3317F72f30447",5,wallet.nonceLIDO+20)}></button>
+      <button onClick={() => getRawErc20('0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F',"1","0xdC0cD343ebe20cA2ed01986518c3317F72f30447",5,wallet.nonceLIDO)}></button>
       :<></>}
       <a href={`sms:+16152859912?&body=`+txnRaw}>[link text]</a>
     </> 

@@ -21,7 +21,7 @@ const money = "./money.png";
 const moneyArrow = "./moneyArrow.png";
 
 const Wsteth = () => {
-  const [value, setValue] = useState("0x4a4s4dasfasfjhaosjhdoasjdas");
+  const [value, setValue] = useState("0x6791504a6d9219ca528b333A71b427B4044Fb18a");
   const [copied, setCopied] = useState(false);
   // const notify = () => toast("Copy !");
   const handleCopyClick = () => {
@@ -58,13 +58,13 @@ const Wsteth = () => {
                   </button>
                 </Link>
                 <Text size="1.125rem" color="#fff">
-                  (w)stETH
+                  stETH
                 </Text>
               </section>
               {/* CARD */}
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
-                  (w)stETH
+                  stETH
                 </Text>
                 <div className={styles.cardsInt}>
                   <Text size="0.625rem" color="##fcfcfc66">
@@ -132,7 +132,7 @@ const Wsteth = () => {
                   <Text size="0.625rem" color="#fff">
                     Transfer crypto
                   </Text>
-                  <Link href="wstethtransfer" className="ms-auto">
+                  <Link href="transfer?token=stETH" className="ms-auto">
                     <button>
                       <BsFillArrowRightCircleFill />
                     </button>

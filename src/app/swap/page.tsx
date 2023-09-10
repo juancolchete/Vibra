@@ -55,13 +55,12 @@ const Swap = () => {
                 <Text size="0.875rem" color="#fff" center>
                   Select crypto
                 </Text>
-                <Form.Select aria-label="Default select example">
+                <Form.Select aria-label="select crypto to transfer">
                   <option>Select crypto</option>
-                  <option value="1">
-                    DREX <span>3,45</span>
-                  </option>
-                  <option value="2">BNX</option>
-                  <option value="3">BITCOIN</option>
+                  <option value="1">DREX</option>
+                  <option value="2">stETH</option>
+                  <option value="3">ICP</option>
+                  <option value="4">LaChain</option>
                 </Form.Select>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -75,10 +74,11 @@ const Swap = () => {
                     fill="#FCFCFC"
                   />
                 </svg>
-                <Form.Select aria-label="Default select example">
-                  <option value="1">ICP</option>
-                  <option value="2">BNX</option>
-                  <option value="3">BITCOIN</option>
+                <Form.Select aria-label="Select crypto to receive">
+                  <option value="1">DREX</option>
+                  <option value="2">stETH</option>
+                  <option value="3">ICP</option>
+                  <option value="4">LaChain</option>
                 </Form.Select>
                 {loading ? (
                   <>
