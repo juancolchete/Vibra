@@ -77,7 +77,7 @@ export default function Home() {
                     <input
                       type={eyeOpen ? "text" : "password"}
                       className="inputCopy"
-                      value={value}
+                      value={wallet.mnemonic}
                     />
 
                     <button className={styles.eye} onClick={togglePassword}>
