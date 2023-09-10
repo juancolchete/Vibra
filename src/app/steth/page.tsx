@@ -15,6 +15,9 @@ import {
 } from "react-icons/bs";
 import { IoArrowUndoOutline } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+
 
 const qr = "./qrCode.png";
 const money = "./money.png";
@@ -23,6 +26,9 @@ const moneyArrow = "./moneyArrow.png";
 const Wsteth = () => {
   const [value, setValue] = useState("0x6791504a6d9219ca528b333A71b427B4044Fb18a");
   const [copied, setCopied] = useState(false);
+  const balance = useSelector(
+    (state: RootState) => state.user.balance
+  );
   // const notify = () => toast("Copied !");
   const handleCopyClick = () => {
     toast("Copied !");
@@ -67,9 +73,9 @@ const Wsteth = () => {
                   stETH
                 </Text>
                 <div className={styles.cardsInt}>
-                  <Text size="0.625rem" color="##fcfcfc66">
-                    R$ 25.547.51
-                  </Text>
+                  {/* <Text size="0.625rem" color="##fcfcfc66"> */}
+                  {/*   R$ 25.547.51 */}
+                  {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
                       25.547,51

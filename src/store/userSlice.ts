@@ -19,7 +19,7 @@ const initialState: user = {
    balance:{
     drex: 0,
     icp: 0,
-    wDrex: 0,
+    laChain: 0,
     stEth: 0,
   }
 };

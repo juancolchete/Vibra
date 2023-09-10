@@ -11,7 +11,7 @@ interface wallet {
 interface balance{
   drex: number;
   icp: number;
-  wDrex: number;
+  laChain: number;
   stEth: number;
 }
 

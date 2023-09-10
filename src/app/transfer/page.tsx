@@ -111,7 +111,7 @@ const DrexTransfer = () => {
                   {selectedCrypto == 0 ?
                    "" : selectedCrypto == 1 ?
                    (
-                  "Balance:"+balance.stEth+cryptoNames[selectedCrypto]) : ""}
+                  "Balance: "+balance.stEth+cryptoNames[selectedCrypto]) : ""}
                 </Text>
                 <Text size="0.875rem" color="#fff" center>
                   Send amount

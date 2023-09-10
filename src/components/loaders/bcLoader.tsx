@@ -27,7 +27,7 @@ const BcLoader = () => {
         dispatch(setBalance({
           drex:0,
           icp:0,
-          wDrex:0,
+          laChain:0,
           stEth: stEthBal,
         })) 
       }

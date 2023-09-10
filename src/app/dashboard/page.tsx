@@ -6,8 +6,13 @@ import Sidebar from "@/components/sidebar/Sidebar";
 import Header from "@/components/header/Header";
 import Link from "next/link";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const page = () => {
+  const balance = useSelector(
+    (state: RootState) => state.user.balance
+  );
   return (
     <>
       <div className="container-fluid ">
@@ -25,12 +30,12 @@ const page = () => {
                   DREX
                 </Text>
                 <div className={styles.cardsInt}>
-                  <Text size="0.625rem" color="##fcfcfc66">
-                    R$ 25.547.51
-                  </Text>
+                  {/* <Text size="0.625rem" color="##fcfcfc66"> */}
+                  {/*   R$ 25.547.51 */}
+                  {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
-                      25.547,51
+                      {balance.drex} 
                     </Text>
                       <button>
                         <BsFillArrowRightCircleFill />
@@ -46,12 +51,12 @@ const page = () => {
                   stETH
                 </Text>
                 <div className={styles.cardsInt}>
-                  <Text size="0.625rem" color="##fcfcfc66">
-                    R$ 25.547.51
-                  </Text>
+                  {/* <Text size="0.625rem" color="##fcfcfc66"> */}
+                  {/*   R$ 25.547.51 */}
+                  {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
-                      25.547,51
+                      {balance.stEth} 
                     </Text>
                       <button>
                         <BsFillArrowRightCircleFill />
@@ -64,15 +69,15 @@ const page = () => {
               <Link href="lido">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
-                  LIDO
+                  LaChain
                 </Text>
                 <div className={styles.cardsInt}>
-                  <Text size="0.625rem" color="##fcfcfc66">
-                    R$ 25.547.51
-                  </Text>
+                  {/* <Text size="0.625rem" color="##fcfcfc66"> */}
+                  {/*   R$ 25.547.51 */}
+                  {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
-                      547,51
+                      {balance.laChain} 
                     </Text>
                       <button>
                         <BsFillArrowRightCircleFill />
@@ -88,12 +93,12 @@ const page = () => {
                   ICP
                 </Text>
                 <div className={styles.cardsInt}>
-                  <Text size="0.625rem" color="##fcfcfc66">
-                    R$ 25.547.51
-                  </Text>
+                  {/* <Text size="0.625rem" color="##fcfcfc66"> */}
+                  {/*   R$ 25.547.51 */}
+                  {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
-                      47,51
+                      {balance.icp}
                     </Text>
                       <button>
                         <BsFillArrowRightCircleFill />
