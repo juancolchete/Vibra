@@ -2,11 +2,13 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import VLibras from "vlibras-nextjs";
 
 const Sidebar = () => {
   const pathname = usePathname();
   return (
     <div className="sidebar">
+      <VLibras forceOnload />
       <Link
         href="/dashboard"
         className={` ${pathname === "/dashboard" ? "active" : ""}`}
