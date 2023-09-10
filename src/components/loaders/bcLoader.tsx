@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { GOERLI_RPC, STETH } from "@/app/constants";
 import contracts from "@/contracts.json";
-import { setBalance, setWalletProperty } from "@/store/userSlice";
+import { setBalance, setWalletNonce } from "@/store/userSlice";
 
 const BcLoader = () => {
   const dispatch = useDispatch();
@@ -35,9 +35,11 @@ const BcLoader = () => {
     const loadNonce = async ()=>{
       console.log("try load nonce")
       const txnCount = await provider.getTransactionCount(wallet.address);
-      dispatch(setWalletProperty({
-        prop: "nonceLIDO",
-        value:txnCount
+      dispatch(setWalletNonce({
+        nonceDREX:0,
+        nonceLIDO:txnCount,
+        nonceICP:txnCount,
+        nonceLAC:txnCount
       }))
       localStorage.setItem("nonceLIDO",txnCount.toString())
     }

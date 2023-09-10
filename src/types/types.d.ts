@@ -15,7 +15,9 @@ interface balance{
   stEth: number;
 }
 
-interface walletProperty{
-  prop: "mnemonic"|"address"|"nonceDREX"|"nonceLIDO"|"nonceICP"|"nonceLAC",
-  value: string | number | never;
+interface walletNonce{
+  nonceDREX:number,
+  nonceLIDO:number,
+  nonceICP:number,
+  nonceLAC:number,
 }

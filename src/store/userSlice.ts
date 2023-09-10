@@ -31,8 +31,11 @@ export const userSlice = createSlice({
     setWallet: (state, action: PayloadAction<wallet>) => {
       state.wallet = action.payload;
     },
-    setWalletProperty: (state, action: PayloadAction<walletProperty>)=>{
-      state.wallet[action.payload.prop] = action.payload.value;
+    setWalletNonce: (state, action: PayloadAction<walletNonce>)=>{
+      state.wallet.nonceDREX = action.payload.nonceDREX;
+      state.wallet.nonceLIDO = action.payload.nonceLIDO;
+      state.wallet.nonceICP = action.payload.nonceICP;
+      state.wallet.nonceLAC = action.payload.nonceLAC;
     },
     setBalance: (state, action: PayloadAction<balance>)=>{
       state.balance = action.payload;
@@ -40,6 +43,6 @@ export const userSlice = createSlice({
   }
 });
 
-export const { setWallet , setBalance, setWalletProperty} = userSlice.actions;
+export const { setWallet , setBalance, setWalletNonce} = userSlice.actions;
 
 export default userSlice.reducer;
