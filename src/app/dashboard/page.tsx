@@ -10,7 +10,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
-const page = () => {
+const Page = () => {
   const balance = useSelector(
     (state: RootState) => state.user.balance
   );
@@ -118,4 +118,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
