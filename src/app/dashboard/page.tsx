@@ -70,7 +70,7 @@ const Page = () => {
               <Link href="lido">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
-                  LaChain
+                  LAC
                 </Text>
                 <div className={styles.cardsInt}>
                   {/* <Text size="0.625rem" color="##fcfcfc66"> */}
@@ -78,7 +78,7 @@ const Page = () => {
                   {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
-                      {balance.laChain} 
+                      {balance.LAC} 
                     </Text>
                       <button>
                         <BsFillArrowRightCircleFill />
@@ -91,7 +91,7 @@ const Page = () => {
               <Link href="icp">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
-                  ICP
+                  BFT
                 </Text>
                 <div className={styles.cardsInt}>
                   {/* <Text size="0.625rem" color="##fcfcfc66"> */}
@@ -99,7 +99,7 @@ const Page = () => {
                   {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
-                      {balance.icp}
+                      {balance.BFT}
                     </Text>
                       <button>
                         <BsFillArrowRightCircleFill />
