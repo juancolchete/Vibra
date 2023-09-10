@@ -24,15 +24,17 @@ const money = "./money.png";
 const moneyArrow = "./moneyArrow.png";
 
 const Wsteth = () => {
-  const [value, setValue] = useState("0x6791504a6d9219ca528b333A71b427B4044Fb18a");
   const [copied, setCopied] = useState(false);
   const balance = useSelector(
     (state: RootState) => state.user.balance
   );
+  const wallet = useSelector(
+    (state: RootState) => state.user.wallet
+  );
   // const notify = () => toast("Copied !");
   const handleCopyClick = () => {
     toast("Copied !");
-    const textToCopy = `${value}`;
+    const textToCopy = `${wallet.address}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -78,7 +80,7 @@ const Wsteth = () => {
                   {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
-                      25.547,51
+                      {balance.stEth} 
                     </Text>
                   </div>
                 </div>
@@ -96,7 +98,7 @@ const Wsteth = () => {
                         }}
                         type="text"
                         className="inputCopy"
-                        value={value}
+                        value={wallet.address}
                       />
                       <button style={{ top: "-36%" }} onClick={handleCopyClick}>
                         <svg

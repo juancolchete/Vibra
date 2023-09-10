@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import styles from "./dashboard.module.css";
 import Title from "@/components/fonts/Title";
