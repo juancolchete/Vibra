@@ -21,6 +21,22 @@ export async function POST(req: NextRequest) {
     const apiKey = process.env.GOERLI_API_KEY
     config.url = `${urlBase}/api?module=proxy&action=eth_sendRawTransaction&hex=${rawTxn}&apikey=${apiKey}`
     const request = await axios.request(config);
+    let reqconfig = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: `https://api.twilio.com/2010-04-01/Accounts/${process.env.TWILLIO_ACCOUNT}/Messages.json`,
+      headers: { 
+        'Content-Type': 'application/x-www-form-urlencoded', 
+        'Authorization': process.env.TWILLIO_TOKEN
+      },
+      data : {
+        To: formData.get("From"),
+        From: process.env.TWILLIO_NUMBER,
+        Body: `\n txnId: ${request.data.result}` 
+      }
+    };
+
+    await axios.request(reqconfig)
     return NextResponse.json(request.data);
   }
   return NextResponse.json({rawTxn});
