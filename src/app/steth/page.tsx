@@ -23,9 +23,9 @@ const moneyArrow = "./moneyArrow.png";
 const Wsteth = () => {
   const [value, setValue] = useState("0x6791504a6d9219ca528b333A71b427B4044Fb18a");
   const [copied, setCopied] = useState(false);
-  // const notify = () => toast("Copy !");
+  // const notify = () => toast("Copied !");
   const handleCopyClick = () => {
-    toast("Copy !");
+    toast("Copied !");
     const textToCopy = `${value}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);

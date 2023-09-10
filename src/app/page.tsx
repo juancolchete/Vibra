@@ -24,7 +24,7 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [eyeOpen, setEyeOpen] = useState(false);
   const handleCopyClick = () => {
-    toast("Copy !");
+    toast("Copied !");
     const textToCopy = `${value}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);

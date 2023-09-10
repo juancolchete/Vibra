@@ -32,7 +32,7 @@ const Wstethswap = () => {
     }, 1000);
   }
   const handleCopyClick = () => {
-    toast("Copy !");
+    toast("Copied !");
     const textToCopy = `${value}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);

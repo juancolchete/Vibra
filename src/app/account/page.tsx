@@ -19,7 +19,7 @@ const Account = () => {
   const [value, setValue] = useState("0x6791504a6d9219ca528b333A71b427B4044Fb18a");
   const [eyeOpen, setEyeOpen] = useState(false);
   const handleCopyClick = () => {
-    toast("Copy !");
+    toast("Copied !");
     const textToCopy = `${value}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
