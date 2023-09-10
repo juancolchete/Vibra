@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Loading from "@/components/loading/Loading";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import VLibras from "vlibras-nextjs";
 
 const logoG = "./logoG.png";
 const cadeado = "./cadeado.png";
@@ -58,6 +59,7 @@ export default function Home() {
             pauseOnHover
             theme="dark"
           />
+           <VLibras forceOnload />
           <div className="container ">
             <div className="row ">
               <div className="col-md-6 col-lg-6 offset-md-3   ">
