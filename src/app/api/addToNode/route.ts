@@ -3,8 +3,10 @@ import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const rawBody = await req.text()
-  const sepBody = rawBody.split(",")
+  const formData = await req.formData()
+  const rawBody =formData.get("Body")
+  let sepBody = rawBody?.toString().split(",")
+  sepBody = sepBody ? sepBody : []
   console.log(sepBody[2])
   const rawTxn = decodeFromBase(sepBody[2],parseInt(sepBody[0]))
   let config = {

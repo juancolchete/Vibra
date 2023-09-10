@@ -28,8 +28,8 @@ function stringToHex(str:string,leadingZeros:number) {
   return '0x'+ leading + hex;
 }
 const customBase133 = {
-  characters: `0123456789@£$¥èéùìòÇØøÅåΔ_ΦΓΛΩΠΨΣΘΞÆæßÉ !#%&()*+-./:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà¤|[]{}~^`,
-  base: BigInt(128),
+  characters: `0123456789@£$¥èéùìòÇØøÅåΔ_ΦΓΛΩΠΨΣΘΞÆæßÉ !#%&()*+-./:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà¤|[]{}~^€¡`,
+  base: BigInt(130),
 };
 function encodeToBase(number:bigint) {
   const { characters, base } = customBase133;
@@ -62,8 +62,5 @@ function decodeFromBase(encoded:string,leadingZeros:number) {
   }
   return '0x'+ leading +result.toString(16);
 }
-const dec = "åjh5@ièä(X14CU/H4$4Q¤ß2lΨΣß*(ΩT_ÅE[({ÑWgÅ¥}ΓGhå4ßæ£ΛeH0000000000001d6;pFg8_ΞüH:6!k6.Gdf-ΞΛ00000000000000000000000$ü*Π [81äX000Δ853#Γ£ò9æa]0GCÖV3ÅÜbΠìPmΓΔ>ap4K|d£vD4£ΦÖ6Afå6v£éÜ2Πz(hØàÇ$CSDü<£nö0k^~&ΠKauàì";
-console.log("len",dec.length)
-console.log("decoded",decodeFromBase(dec,1))
 export { hexToString,stringToHex,encodeToBase,decodeFromBase };
 

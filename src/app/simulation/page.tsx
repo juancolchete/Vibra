@@ -5,6 +5,7 @@ import { ethers } from "ethers";
 import contracts from "../../contracts.json";
 import { useState } from "react";
 import { encodeToBase, decodeFromBase } from "@/utils/data";
+import * as bip39  from "bip39"
 
 export default function Home() {
   const wallet = useSelector(
@@ -16,8 +17,6 @@ export default function Home() {
     const iface = new ethers.Interface(contracts.ERC20_ABI);
     const rawData = iface.encodeFunctionData("transfer",[receiver, amount])
     let signer = ethers.Wallet.fromPhrase(wallet.mnemonic);
-    console.log('Using wallet address ' + signer.address);
-
     let transaction = {
       to: token,
       value: 0,
