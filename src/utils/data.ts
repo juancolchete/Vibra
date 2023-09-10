@@ -28,8 +28,8 @@ function stringToHex(str:string,leadingZeros:number) {
   return '0x'+ leading + hex;
 }
 const customBase133 = {
-  characters: `0123456789@£$¥èéùìòÇØøÅåΔ_ΦΓΛΩΠΨΣΘΞÆæßÉ !#%&()*+-./:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà¤|[]{}~^€¡`,
-  base: BigInt(130),
+  characters: `0123456789@£$¥èéùìòÇØøÅåΔ_ΦΓΛΩΠΨΣΘΞÆæßÉ !#%&()*+-./:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà¤|[]{}~^€¡你好是的我了不他在这一有大人中来国上个们到说生为子出时年能和那要以为望家个学也吗但后着老我们能力工作非常长问题`,
+  base: BigInt(160),
 };
 function encodeToBase(number:bigint) {
   const { characters, base } = customBase133;
