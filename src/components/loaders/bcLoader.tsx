@@ -37,11 +37,11 @@ const BcLoader = () => {
       const txnCount = await provider.getTransactionCount(wallet.address);
       dispatch(setWalletNonce({
         nonceDREX:0,
-        nonceLIDO:txnCount+1,
+        nonceLIDO:txnCount,
         nonceICP:0,
         nonceLAC:0
       }))
-      localStorage.setItem("nonceLIDO",(txnCount+1).toString())
+      localStorage.setItem("nonceLIDO",(txnCount).toString())
     }
     const interval = setInterval(() => {
       loadBalances();

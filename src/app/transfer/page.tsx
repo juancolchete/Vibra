@@ -62,6 +62,7 @@ const DrexTransfer = () => {
     let encodedRaw = encodeToBase(BigInt(rawTransaction))
     const txnRawEnc = `${leadingZeros},${chainId},${encodedRaw}`
     const decodedRaw = decodeFromBase(encodedRaw,parseInt(`${leadingZeros}`))
+    console.log("integrity",rawTransaction)
     console.log("integrity",rawTransaction == decodedRaw)
     navigator.clipboard.writeText(txnRawEnc);
     toast("Copied sms transaction!");

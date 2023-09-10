@@ -20,6 +20,7 @@ export async function POST(req: NextRequest) {
     const urlBase = process.env.GOERLI_API_URL
     const apiKey = process.env.GOERLI_API_KEY
     config.url = `${urlBase}/api?module=proxy&action=eth_sendRawTransaction&hex=${rawTxn}&apikey=${apiKey}`
+    console.log(rawTxn); 
     const request = await axios.request(config);
     let reqconfig = {
       method: 'post',
