@@ -21,7 +21,7 @@ const PreLoader = () => {
            address,
            nonceDREX: parseInt(`${localStorage.getItem("nonceDREX")}`) > 0 ? parseInt(`${localStorage.getItem("nonceDREX")}`) : 1,
            nonceLIDO: parseInt(`${localStorage.getItem("nonceLIDO")}`) > 0 ? parseInt(`${localStorage.getItem("nonceLIDO")}`) : 1,
-           nonceICP: parseInt(`${localStorage.getItem("nonceICP")}`) > 0 ? parseInt(`${localStorage.getItem("nonceICP")}`) : 1,  
+           nonceBFT: parseInt(`${localStorage.getItem("nonceBFT")}`) > 0 ? parseInt(`${localStorage.getItem("nonceBFT")}`) : 1,  
            nonceLAC: parseInt(`${localStorage.getItem("nonceLAC")}`) > 0 ? parseInt(`${localStorage.getItem("nonceLAC")}`) : 1,
            loaded: true 
         })) 
@@ -33,7 +33,7 @@ const PreLoader = () => {
            address: signer.address,
            nonceDREX:1,
            nonceLIDO:1,
-           nonceICP:1,
+           nonceBFT:1,
            nonceLAC:1,
            loaded: true 
         }))
