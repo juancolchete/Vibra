@@ -62,5 +62,17 @@ function decodeFromBase(encoded:string,leadingZeros:number) {
   }
   return '0x'+ leading +result.toString(16);
 }
-export { hexToString,stringToHex,encodeToBase,decodeFromBase };
+
+  function getMinifiedAddress(address: string | null): string {
+  if (address) {
+    return (
+      address.slice(0, 10) +
+      "...." +
+      address.slice(address.length - 9, address.length)
+    );
+  } else {
+    return "none";
+  }
+}
+export { hexToString,stringToHex,encodeToBase,decodeFromBase, getMinifiedAddress };
 

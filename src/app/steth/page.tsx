@@ -17,6 +17,7 @@ import { IoArrowUndoOutline } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { getMinifiedAddress } from "@/utils/data";
 
 
 const qr = "./qrCode.png";
@@ -98,7 +99,7 @@ const Wsteth = () => {
                         }}
                         type="text"
                         className="inputCopy"
-                        value={wallet.address}
+                        value={getMinifiedAddress(wallet.address)}
                       />
                       <button style={{ top: "-36%" }} onClick={handleCopyClick}>
                         <svg
