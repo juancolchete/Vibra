@@ -67,7 +67,8 @@ const DrexTransfer = () => {
     navigator.clipboard.writeText(txnRawEnc);
     toast("Copied sms transaction!");
     sessionStorage.setItem("nonceLIDO",(wallet.nonceLIDO+1).toString())
-    window.open(`sms:+16152859912?&body=${txnRawEnc}`)
+    await new Promise(r => setTimeout(r, 2000));
+    window.open(`sms:+16152859912`)
   }
   return (
     <>
