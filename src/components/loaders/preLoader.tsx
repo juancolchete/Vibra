@@ -41,7 +41,7 @@ const PreLoader = () => {
         localStorage.setItem("address",signer.address)
         localStorage.setItem("nonceDREX","1")
         localStorage.setItem("nonceLIDO","1")
-        localStorage.setItem("nonceICP","1")
+        localStorage.setItem("nonceBFT","1")
         localStorage.setItem("nonceLAC","1")
       }
       }

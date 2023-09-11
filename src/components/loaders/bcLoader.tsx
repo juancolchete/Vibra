@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { GOERLI_RPC, STETH } from "@/app/constants";
+import { BITFINITY_RPC, GOERLI_RPC, STETH } from "@/app/constants";
 import contracts from "@/contracts.json";
 import { setBalance, setWalletNonce } from "@/store/userSlice";
 
@@ -17,16 +17,18 @@ const BcLoader = () => {
     (state: RootState) => state.user.wallet
   );
    useEffect(() => {
-    const provider = new ethers.JsonRpcProvider(GOERLI_RPC);
+    const providerGoerli = new ethers.JsonRpcProvider(GOERLI_RPC);
+    const providerBFT = new ethers.JsonRpcProvider(BITFINITY_RPC);
     const loadBalances = async ()=>{
       if(wallet.loaded == true){
-        const stEth = new ethers.Contract(STETH,contracts.ERC20_ABI,provider);
+        const stEth = new ethers.Contract(STETH,contracts.ERC20_ABI,providerGoerli);
         const stEthRawBal = await stEth.balanceOf(wallet.address);
         const stEthBal = Number(ethers.formatEther(stEthRawBal));
-        console.log(stEthRawBal)
+        const BFTRawBal = await providerBFT.getBalance(wallet.address);  
+        const BFTBal = Number(ethers.formatEther(BFTRawBal));
         dispatch(setBalance({
           drex:0,
-          BFT:0,
+          BFT:BFTBal,
           LAC:0,
           stEth: stEthBal,
         })) 
@@ -34,14 +36,16 @@ const BcLoader = () => {
     }
     const loadNonce = async ()=>{
       console.log("try load nonce")
-      const txnCount = await provider.getTransactionCount(wallet.address);
+      const txnCountGoerli = await providerGoerli.getTransactionCount(wallet.address);
+      const txnCountBFT = await providerBFT.getTransactionCount(wallet.address);
       dispatch(setWalletNonce({
         nonceDREX:0,
-        nonceLIDO:txnCount,
-        nonceBFT:0,
+        nonceLIDO:txnCountGoerli,
+        nonceBFT:txnCountBFT,
         nonceLAC:0
       }))
-      localStorage.setItem("nonceLIDO",(txnCount).toString())
+      localStorage.setItem("nonceLIDO",(txnCountGoerli).toString())
+      localStorage.setItem("nonceBFT",(txnCountBFT).toString())
     }
     const interval = setInterval(() => {
       loadBalances();

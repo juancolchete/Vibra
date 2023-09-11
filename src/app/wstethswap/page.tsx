@@ -83,7 +83,7 @@ const Wstethswap = () => {
                   />
                 </svg>
                 <Text size="0.675rem" color="##fcfcfc66" center>
-                  Swap confirmed from DREX to ICP, check balance.
+                  Swap confirmed from DREX to BFT, check balance.
                 </Text>
 
                 {loading ? (

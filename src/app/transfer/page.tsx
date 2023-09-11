@@ -79,7 +79,7 @@ const DrexTransfer = () => {
               <Header />
               {/* SECTION */}
               <section>
-                <Link href="drex">
+                <Link href="" onClick={()=>{window.history.go(-1); return false;}}>
                   <button>
                     <IoArrowUndoOutline />
                   </button>
@@ -106,7 +106,7 @@ const DrexTransfer = () => {
                   <option value="-1">Select crypto</option>
                   <option value="0">DREX</option>
                   <option value="1">stETH</option>
-                  <option value="2">ICP</option>
+                  <option value="2">BFT</option>
                   <option value="3">LaChain</option>
                 </Form.Select>
                 <Text size="0.875rem" color="##fcfcfc66" center>

@@ -11,7 +11,7 @@ let config = {
   url: `${process.env.PIX_API}/oauth/token`,
   headers: { 
     'Content-Type': 'application/json', 
-    'Authorization': 'Basic Q2xpZW50X0lkX2Q3MDhkMTQyMTVhYzFiYzBkYTFlYzYxYzgyODc1Yzk4ZWJhYTg4YjI6Q2xpZW50X1NlY3JldF9hZmExOTI2NGMwMjFmZDNiZmM1MjUwZWUzMjFmODE5YmYzNjIyYjk5'
+    'Authorization': process.env.PIX_BASIC
   },
   data : {
     grant_type: "client_credentials" 
@@ -19,5 +19,5 @@ let config = {
 };
 
 const authReq = await axios.request(config)
-
+console.log(authReq.data)
 }

@@ -59,7 +59,7 @@ const Swap = () => {
                   <option>Select crypto</option>
                   <option value="1">DREX</option>
                   <option value="2">stETH</option>
-                  <option value="3">ICP</option>
+                  <option value="3">BFT</option>
                   <option value="4">LaChain</option>
                 </Form.Select>
                 <svg
@@ -77,7 +77,7 @@ const Swap = () => {
                 <Form.Select aria-label="Select crypto to receive">
                   <option value="1">DREX</option>
                   <option value="2">stETH</option>
-                  <option value="3">ICP</option>
+                  <option value="3">BFT</option>
                   <option value="4">LaChain</option>
                 </Form.Select>
                 {loading ? (
