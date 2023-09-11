@@ -60,7 +60,7 @@ const Swap = () => {
                   <option value="1">DREX</option>
                   <option value="2">stETH</option>
                   <option value="3">BFT</option>
-                  <option value="4">LaChain</option>
+                  <option value="4">wDrex</option>
                 </Form.Select>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ const Swap = () => {
                   <option value="1">DREX</option>
                   <option value="2">stETH</option>
                   <option value="3">BFT</option>
-                  <option value="4">LaChain</option>
+                  <option value="4">wDrex</option>
                 </Form.Select>
                 {loading ? (
                   <>

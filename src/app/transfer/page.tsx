@@ -137,7 +137,7 @@ const DrexTransfer = () => {
                   <option value="0">DREX</option>
                   <option value="1">stETH</option>
                   <option value="2">BFT</option>
-                  <option value="3">LaChain</option>
+                  <option value="3">wDrex</option>
                 </Form.Select>
                 <Text size="0.875rem" color="##fcfcfc66" center>
                   {selectedCrypto == 0 ?

@@ -70,7 +70,7 @@ const Page = () => {
               <Link href="lido">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
-                  LAC
+                  wDrex
                 </Text>
                 <div className={styles.cardsInt}>
                   {/* <Text size="0.625rem" color="##fcfcfc66"> */}
@@ -78,7 +78,7 @@ const Page = () => {
                   {/* </Text> */}
                   <div className={styles.arrow}>
                     <Text size="1.125rem" color="#fff">
-                      {balance.LAC} 
+                      {balance.wDrex} 
                     </Text>
                       <button>
                         <BsFillArrowRightCircleFill />

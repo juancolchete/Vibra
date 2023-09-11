@@ -23,5 +23,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules","Drex","LAC"]
+  "exclude": ["node_modules","Drex","wDrex"]
 }

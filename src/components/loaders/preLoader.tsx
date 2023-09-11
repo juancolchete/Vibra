@@ -22,7 +22,7 @@ const PreLoader = () => {
            nonceDREX: parseInt(`${localStorage.getItem("nonceDREX")}`) > 0 ? parseInt(`${localStorage.getItem("nonceDREX")}`) : 1,
            nonceLIDO: parseInt(`${localStorage.getItem("nonceLIDO")}`) > 0 ? parseInt(`${localStorage.getItem("nonceLIDO")}`) : 1,
            nonceBFT: parseInt(`${localStorage.getItem("nonceBFT")}`) > 0 ? parseInt(`${localStorage.getItem("nonceBFT")}`) : 1,  
-           nonceLAC: parseInt(`${localStorage.getItem("nonceLAC")}`) > 0 ? parseInt(`${localStorage.getItem("nonceLAC")}`) : 1,
+           noncewDrex: parseInt(`${localStorage.getItem("noncewDrex")}`) > 0 ? parseInt(`${localStorage.getItem("noncewDrex")}`) : 1,
            loaded: true 
         })) 
       }else{
@@ -34,7 +34,7 @@ const PreLoader = () => {
            nonceDREX:1,
            nonceLIDO:1,
            nonceBFT:1,
-           nonceLAC:1,
+           noncewDrex:1,
            loaded: true 
         }))
         localStorage.setItem("mnemonic",mnemonic.phrase)
@@ -42,7 +42,7 @@ const PreLoader = () => {
         localStorage.setItem("nonceDREX","1")
         localStorage.setItem("nonceLIDO","1")
         localStorage.setItem("nonceBFT","1")
-        localStorage.setItem("nonceLAC","1")
+        localStorage.setItem("noncewDrex","1")
       }
       }
     }, [dispatch,wallet]);

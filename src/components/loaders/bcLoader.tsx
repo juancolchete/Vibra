@@ -29,7 +29,7 @@ const BcLoader = () => {
         dispatch(setBalance({
           drex:0,
           BFT:BFTBal,
-          LAC:0,
+          wDrex:0,
           stEth: stEthBal,
         })) 
       }
@@ -42,7 +42,7 @@ const BcLoader = () => {
         nonceDREX:0,
         nonceLIDO:txnCountGoerli,
         nonceBFT:txnCountBFT,
-        nonceLAC:0
+        noncewDrex:0
       }))
       localStorage.setItem("nonceLIDO",(txnCountGoerli).toString())
       localStorage.setItem("nonceBFT",(txnCountBFT).toString())

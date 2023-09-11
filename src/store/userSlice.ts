@@ -13,13 +13,13 @@ const initialState: user = {
     nonceDREX:1,
     nonceLIDO:1,
     nonceBFT:1,
-    nonceLAC:1,
+    noncewDrex:1,
     loaded: false,
   },
    balance:{
     drex: 0,
     BFT: 0,
-    LAC: 0,
+    wDrex: 0,
     stEth: 0,
   }
 };
@@ -35,7 +35,7 @@ export const userSlice = createSlice({
       state.wallet.nonceDREX = action.payload.nonceDREX;
       state.wallet.nonceLIDO = action.payload.nonceLIDO;
       state.wallet.nonceBFT = action.payload.nonceBFT;
-      state.wallet.nonceLAC = action.payload.nonceLAC;
+      state.wallet.noncewDrex = action.payload.noncewDrex;
     },
     setBalance: (state, action: PayloadAction<balance>)=>{
       state.balance = action.payload;

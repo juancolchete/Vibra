@@ -4,14 +4,14 @@ interface wallet {
   nonceDREX: number,
   nonceLIDO: number,
   nonceBFT: number,
-  nonceLAC: number,
+  noncewDrex: number,
   loaded: boolean;
 }
 
 interface balance{
   drex: number;
   BFT: number;
-  LAC: number;
+  wDrex: number;
   stEth: number;
 }
 
@@ -19,5 +19,5 @@ interface walletNonce{
   nonceDREX:number,
   nonceLIDO:number,
   nonceBFT:number,
-  nonceLAC:number,
+  noncewDrex:number,
 }
