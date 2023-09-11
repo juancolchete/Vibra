@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
       data : {
         To: formData.get("From"),
         From: process.env.NEXT_PUBLIC_TWILLIO_NUMBER,
-        Body: `\n txnId: ${request.data.result}` 
+        Body: `${request.data.result}` 
       }
     };
 
