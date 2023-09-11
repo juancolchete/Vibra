@@ -245,6 +245,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@openzeppelin/contracts@npm:^4.9.3":
+  version: 4.9.3
+  resolution: "@openzeppelin/contracts@npm:4.9.3"
+  checksum: 4932063e733b35fa7669b9fe2053f69b062366c5c208b0c6cfa1ac451712100c78acff98120c3a4b88d94154c802be05d160d71f37e7d74cadbe150964458838
+  languageName: node
+  linkType: hard
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -3994,6 +4001,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vibra@workspace:."
   dependencies:
+    "@openzeppelin/contracts": ^4.9.3
     "@reduxjs/toolkit": ^1.9.5
     "@types/node": 20.5.9
     "@types/react": 18.2.21
