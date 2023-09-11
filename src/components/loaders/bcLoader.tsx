@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { BITFINITY_RPC, GOERLI_RPC, STETH, wDrex } from "@/app/constants";
+import { BITFINITY_RPC, GOERLI_RPC, SEPOLIA_RPC, STETH, wDrex } from "@/app/constants";
 import contracts from "@/contracts.json";
 import { setBalance, setWalletNonce } from "@/store/userSlice";
 
@@ -18,7 +18,7 @@ const BcLoader = () => {
     useEffect(() => {
         const providerGoerli = new ethers.JsonRpcProvider(GOERLI_RPC);
         const providerBFT = new ethers.JsonRpcProvider(BITFINITY_RPC);
-        const providerSepolia = new ethers.JsonRpcProvider(BITFINITY_RPC);
+        const providerSepolia = new ethers.JsonRpcProvider(SEPOLIA_RPC);
         const loadBalances = async () => {
             if (wallet.loaded == true) {
                 const stEth = new ethers.Contract(STETH, contracts.ERC20_ABI, providerGoerli);
