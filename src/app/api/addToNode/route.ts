@@ -63,6 +63,14 @@ export async function POST(req: NextRequest) {
     const request = await axios.request(config)
     await sendUserTxn(`${request.data.result}`)
     return NextResponse.json(request.data);
+  }else if(parseInt(sepBody[1]) == chains[3]){
+    console.log(rawTxn)
+    const urlBase = process.env.SEPOLIA_API_URL
+    const apiKey = process.env.GOERLI_API_KEY
+    config.url = `${urlBase}/api?module=proxy&action=eth_sendRawTransaction&hex=${rawTxn}&apikey=${apiKey}`
+    const request = await axios.request(config);
+    await sendUserTxn(`${request.data.result}`) 
+    return NextResponse.json(request.data);
   }
   return NextResponse.json({rawTxn});
 }
