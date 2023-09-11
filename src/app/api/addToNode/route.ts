@@ -1,4 +1,4 @@
-import { chains } from "@/app/constants";
+import { BITFINITY_RPC, chains } from "@/app/constants";
 import { decodeFromBase } from "@/utils/data";
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
@@ -39,15 +39,15 @@ export async function POST(req: NextRequest) {
     const urlBase = process.env.GOERLI_API_URL
     const apiKey = process.env.GOERLI_API_KEY
     config.url = `${urlBase}/api?module=proxy&action=eth_sendRawTransaction&hex=${rawTxn}&apikey=${apiKey}`
-    console.log(rawTxn); 
     const request = await axios.request(config);
     await sendUserTxn(`${request.data.result}`) 
     return NextResponse.json(request.data);
   }else if(parseInt(sepBody[1]) == chains[2]){
+    console.log(rawTxn);
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://testnet.bitfinity.network/',
+      url: BITFINITY_RPC,
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -60,9 +60,8 @@ export async function POST(req: NextRequest) {
       ]
     }
     };
-
     const request = await axios.request(config)
-    console.log(rawTxn);
+    await sendUserTxn(`${request.data.result}`)
     return NextResponse.json(request.data);
   }
   return NextResponse.json({rawTxn});
