@@ -1,3 +1,4 @@
+import { chains } from "@/app/constants";
 import { decodeFromBase } from "@/utils/data";
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
@@ -33,7 +34,7 @@ export async function POST(req: NextRequest) {
 
     await axios.request(reqconfig)
   }
-  if(parseInt(sepBody[1]) == 5){
+  if(parseInt(sepBody[1]) == chains[1]){
     console.log(rawTxn)
     const urlBase = process.env.GOERLI_API_URL
     const apiKey = process.env.GOERLI_API_KEY
@@ -42,7 +43,7 @@ export async function POST(req: NextRequest) {
     const request = await axios.request(config);
     await sendUserTxn(`${request.data.result}`) 
     return NextResponse.json(request.data);
-  }else if(parseInt(sepBody[1]) == 5){
+  }else if(parseInt(sepBody[1]) == chains[2]){
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
