@@ -67,7 +67,7 @@ const Page = () => {
               </div>
               </Link>
               {/* CARD3 */}
-              <Link href="lido">
+              <Link href="wDrex">
               <div className={styles.cards}>
                 <Text size="1.125rem" color="#fff">
                   wDrex
