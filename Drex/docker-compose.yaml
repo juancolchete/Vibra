@@ -5,7 +5,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.16.240.0/24
+        - subnet: 172.16.100.0/24
 
 services: 
   bootnode:
@@ -30,7 +30,7 @@ services:
       - 30303:30303
     networks:
       besu-network:
-        ipv4_address: 172.16.240.30
+        ipv4_address: 172.16.100.40
 
   node2:
     container_name: node2
@@ -45,7 +45,7 @@ services:
          --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
          --min-gas-price=0 \
          --host-allowlist="*" --rpc-http-cors-origins="all" \
-         --bootnodes=enode://144bac25b8032e69ff10c2c840cc2f3510cbfd0aa8533c656d3db5faccd4f627ac23e74c1780dfed56a424a65f4dbaf18bc2a719ddbc2efa26d09061fd1450d1@172.16.240.30:30303 --p2p-port=30303;
+         --bootnodes=enode://749b629914a70123cb752d8f5097264d283420358d80349cadb10c5bdd5c920b9ddcbbb11d61c34d713ed6457780e953dabd30c1e6b4ed15d5fa8d895f53643b@172.16.100.40:30303 --p2p-port=30303;
     volumes:
       - ./genesis.json:/opt/besu/genesis.json
       - ./Node-2/data:/opt/besu/data
@@ -57,7 +57,7 @@ services:
       - bootnode
     networks:
       besu-network:
-        ipv4_address: 172.16.240.31
+        ipv4_address: 172.16.100.41
 
   
   node3:
@@ -73,7 +73,7 @@ services:
          --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
          --min-gas-price=0 \
          --host-allowlist="*" --rpc-http-cors-origins="all" \
-         --bootnodes=enode://144bac25b8032e69ff10c2c840cc2f3510cbfd0aa8533c656d3db5faccd4f627ac23e74c1780dfed56a424a65f4dbaf18bc2a719ddbc2efa26d09061fd1450d1@172.16.240.30:30303 --p2p-port=30303;
+         --bootnodes=enode://749b629914a70123cb752d8f5097264d283420358d80349cadb10c5bdd5c920b9ddcbbb11d61c34d713ed6457780e953dabd30c1e6b4ed15d5fa8d895f53643b@172.16.100.40:30303 --p2p-port=30303;
     volumes:
       - ./genesis.json:/opt/besu/genesis.json
       - ./Node-3/data:/opt/besu/data
@@ -85,7 +85,7 @@ services:
       - bootnode
     networks:
       besu-network:
-        ipv4_address: 172.16.240.32
+        ipv4_address: 172.16.100.42
 
   node4:
     container_name: node4
@@ -100,7 +100,7 @@ services:
          --genesis-file=/opt/besu/genesis.json --rpc-http-enabled \
          --host-allowlist="*" --rpc-http-cors-origins="all" \
          --min-gas-price=0 \
-         --bootnodes=enode://144bac25b8032e69ff10c2c840cc2f3510cbfd0aa8533c656d3db5faccd4f627ac23e74c1780dfed56a424a65f4dbaf18bc2a719ddbc2efa26d09061fd1450d1@172.16.240.30:30303 --p2p-port=30303;
+         --bootnodes=enode://749b629914a70123cb752d8f5097264d283420358d80349cadb10c5bdd5c920b9ddcbbb11d61c34d713ed6457780e953dabd30c1e6b4ed15d5fa8d895f53643b@172.16.100.40:30303 --p2p-port=30303;
     volumes:
       - ./genesis.json:/opt/besu/genesis.json
       - ./Node-4/data:/opt/besu/data
@@ -112,4 +112,4 @@ services:
       - bootnode
     networks:
       besu-network:
-        ipv4_address: 172.16.240.33
+        ipv4_address: 172.16.100.43
