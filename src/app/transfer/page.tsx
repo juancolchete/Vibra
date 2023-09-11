@@ -36,6 +36,8 @@ const DrexTransfer = () => {
     if(selectedCrypto == 0){
     }else if(selectedCrypto == 1){
       getRawErc20(tokens[selectedCrypto],ethers.parseEther(amountSend),receiverAddress,chains[selectedCrypto],wallet.nonceLIDO);
+    }else if(selectedCrypto == 2){
+      getRawETH(ethers.parseEther(amountSend),receiverAddress,chains[selectedCrypto],wallet.nonceBFT) 
     }
   }
   const getRawErc20 = async (token:string,amount:bigint,receiver:string,chainId:number,nonce:number)=>{
@@ -67,6 +69,34 @@ const DrexTransfer = () => {
     navigator.clipboard.writeText(txnRawEnc);
     toast("Copied sms transaction!");
     sessionStorage.setItem("nonceLIDO",(wallet.nonceLIDO+1).toString())
+    await new Promise(r => setTimeout(r, 2000));
+    window.open(`sms:${process.env.NEXT_PUBLIC_TWILLIO_NUMBER}`)
+  }
+  const getRawETH = async (amount:bigint,receiver:string,chainId:number,nonce:number)=>{
+    let signer = ethers.Wallet.fromPhrase(wallet.mnemonic);
+    console.log('Using wallet address ' + signer.address);
+
+    let transaction = {
+      to: receiver,
+      value: amount,
+      gasLimit: '21000',
+      maxPriorityFeePerGas: ethers.parseUnits('2', 'gwei'),
+      maxFeePerGas: ethers.parseUnits('2', 'gwei'),
+      nonce,
+      type: 2,
+      chainId
+    };
+
+    let rawTransaction = await signer.signTransaction(transaction);
+    let leadingZeros = rawTransaction?.match(/^0*/)?.[0]?.length;
+    let encodedRaw = encodeToBase(BigInt(rawTransaction))
+    const txnRawEnc = `${leadingZeros},${chainId},${encodedRaw}`
+    const decodedRaw = decodeFromBase(encodedRaw,parseInt(`${leadingZeros}`))
+    console.log("integrity",rawTransaction)
+    console.log("integrity",rawTransaction == decodedRaw)
+    navigator.clipboard.writeText(txnRawEnc);
+    toast("Copied sms transaction!");
+    sessionStorage.setItem("nonceBFT",(wallet.nonceLIDO+1).toString())
     await new Promise(r => setTimeout(r, 2000));
     window.open(`sms:${process.env.NEXT_PUBLIC_TWILLIO_NUMBER}`)
   }

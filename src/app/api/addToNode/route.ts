@@ -15,13 +15,7 @@ export async function POST(req: NextRequest) {
     url:'',
     headers: { }
   };
-  if(parseInt(sepBody[1]) == 5){
-    console.log(rawTxn)
-    const urlBase = process.env.GOERLI_API_URL
-    const apiKey = process.env.GOERLI_API_KEY
-    config.url = `${urlBase}/api?module=proxy&action=eth_sendRawTransaction&hex=${rawTxn}&apikey=${apiKey}`
-    console.log(rawTxn); 
-    const request = await axios.request(config);
+  const sendUserTxn = async(txnId:string)=>{
     let reqconfig = {
       method: 'post',
       maxBodyLength: Infinity,
@@ -33,11 +27,41 @@ export async function POST(req: NextRequest) {
       data : {
         To: formData.get("From"),
         From: process.env.NEXT_PUBLIC_TWILLIO_NUMBER,
-        Body: `${request.data.result}` 
+        Body: txnId 
       }
     };
 
     await axios.request(reqconfig)
+  }
+  if(parseInt(sepBody[1]) == 5){
+    console.log(rawTxn)
+    const urlBase = process.env.GOERLI_API_URL
+    const apiKey = process.env.GOERLI_API_KEY
+    config.url = `${urlBase}/api?module=proxy&action=eth_sendRawTransaction&hex=${rawTxn}&apikey=${apiKey}`
+    console.log(rawTxn); 
+    const request = await axios.request(config);
+    await sendUserTxn(`${request.data.result}`) 
+    return NextResponse.json(request.data);
+  }else if(parseInt(sepBody[1]) == 5){
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'https://testnet.bitfinity.network/',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : {
+      "jsonrpc": "2.0",
+      "id": "1",
+      "method": "eth_sendRawTransaction",
+      "params": [
+        rawTxn
+      ]
+    }
+    };
+
+    const request = await axios.request(config)
+    console.log(rawTxn);
     return NextResponse.json(request.data);
   }
   return NextResponse.json({rawTxn});
