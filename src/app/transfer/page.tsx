@@ -38,6 +38,8 @@ const DrexTransfer = () => {
       getRawErc20(tokens[selectedCrypto],ethers.parseEther(amountSend),receiverAddress,chains[selectedCrypto],wallet.nonceLIDO);
     }else if(selectedCrypto == 2){
       getRawETH(ethers.parseEther(amountSend),receiverAddress,chains[selectedCrypto],wallet.nonceBFT) 
+    }else if(selectedCrypto == 3){
+      getRawErc20(tokens[selectedCrypto],ethers.parseEther(amountSend),receiverAddress,chains[selectedCrypto],wallet.nonceLIDO); 
     }
   }
   const getRawErc20 = async (token:string,amount:bigint,receiver:string,chainId:number,nonce:number)=>{
