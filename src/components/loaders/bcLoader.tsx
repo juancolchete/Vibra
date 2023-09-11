@@ -7,7 +7,7 @@ import { BITFINITY_RPC, GOERLI_RPC, STETH, wDrex } from "@/app/constants";
 import contracts from "@/contracts.json";
 import { setBalance, setWalletNonce } from "@/store/userSlice";
 
-export const BcLoader = () => {
+const BcLoader = () => {
     const dispatch = useDispatch();
     const balance = useSelector(
         (state: RootState) => state.user.balance
@@ -63,4 +63,4 @@ export const BcLoader = () => {
         <></>
     );
 };
-
+export default BcLoader;
